@@ -9,7 +9,7 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! olivetti)
 ;; (package! company-bibtex)
-;; (package! org-ref)
+(package! org-ref)
 ;; (package! ivy-bibtex)
 ;; (package! modus-operandi-theme)
 ;; (package! modus-vivendi-theme)

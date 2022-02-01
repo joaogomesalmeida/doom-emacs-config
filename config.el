@@ -75,15 +75,16 @@ doom-variable-pitch-font (font-spec :family "Iosevka SS04" :size 16)
 (setq org-log-done 'time)
 
 ;; Add KOMA-scripts classes to org export
-  (add-to-list 'org-latex-classes
-               '("koma-article" "\\documentclass{scrartcl}"
-                 ("\\section{%s}" . "\\section*{%s}")
-                 ("\\subsection{%s}" . "\\subsection*{%s}")
-                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+(require 'ox-latex)
+ (add-to-list 'org-latex-classes
+              '("koma-article" "\\documentclass{scrartcl}"
+                ("\\section{%s}" . "\\section*{%s}")
+                ("\\subsection{%s}" . "\\subsection*{%s}")
+                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-  (add-to-list 'org-latex-classes
+ (add-to-list 'org-latex-classes
                '("koma-report" "\\documentclass{scrreprt}"
                  ("\\part{%s}" . "\\part*{%s}")
                  ("\\chapter{%s}" . "\\chapter*{%s}")
@@ -91,14 +92,14 @@ doom-variable-pitch-font (font-spec :family "Iosevka SS04" :size 16)
                  ("\\subsection{%s}" . "\\subsection*{%s}")
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
 
-  (add-to-list 'org-latex-classes
+ (add-to-list 'org-latex-classes
                '("koma-book" "\\documentclass[11pt]{scrbook}"
                  ("\\part{%s}" . "\\part*{%s}")
                  ("\\chapter{%s}" . "\\chapter*{%s}")
                  ("\\section{%s}" . "\\section*{%s}")
                  ("\\subsection{%s}" . "\\subsection*{%s}")
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
-  )
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
