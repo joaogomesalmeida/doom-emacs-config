@@ -155,36 +155,44 @@ doom-variable-pitch-font (font-spec :family "Iosevka SS04" :size 16)
 
 ;; Configurar org-ref
 ;;
-(use-package! org-ref
-  :after org
-  :config
-  (setq!
-     org-ref-completion-library 'org-ref-ivy-cite
-     org-ref-bibliography-notes "~/Dropbox/Bibliografia/notes.org"
-     org-ref-default-bibliography '("~/Dropbox/Bibliografia/BetterBibLatex/bib.bib")
-     org-ref-pdf-directory "~/Dropbox/Bibliografia/Biblioteca/"
-     reftex-default-bibliography '("~/Dropbox/Bibliografia/BetterBibLatex/bib.bib")
-  ))
+;; (use-package! org-ref
+;;   :after org
+;;   :config
+;;   (setq!
+;;      org-ref-completion-library 'org-ref-ivy-cite
+;;      org-ref-bibliography-notes "~/Dropbox/Bibliografia/notes.org"
+;;      org-ref-default-bibliography '("~/Dropbox/Bibliografia/BetterBibLatex/bib.bib")
+;;      org-ref-pdf-directory "~/Dropbox/Bibliografia/Biblioteca/"
+;;      reftex-default-bibliography '("~/Dropbox/Bibliografia/BetterBibLatex/bib.bib")
+;;   ))
 
-;;Configura ivy-bibtex
-(use-package! ivy-bibtex
-  :after org
-  :config
-  (setq
-   bibtex-completion-bibliography '("~/Dropbox/Bibliografia/BetterBibLatex/bib.bib")
-   bibtex-completion-pdf-field "File"
-   ivy-bibtex-default-action 'ivy-bibtex-insert-citation
-   bibtex-completion-format-citation-functions
-    '((org-mode      . bibtex-completion-format-citation-pandoc-citeproc)
-      (latex-mode    . bibtex-completion-format-citation-cite)
-      (markdown-mode . bibtex-completion-format-citation-pandoc-citeproc)
-      (default       . bibtex-completion-format-citation-pandoc-citeproc)
-     )
-  )
-)
+;; ;;Configura ivy-bibtex
+;; (use-package! ivy-bibtex
+;;   :after org
+;;   :config
+;;   (setq
+;;    bibtex-completion-bibliography '("~/Dropbox/Bibliografia/BetterBibLatex/bib.bib")
+;;    bibtex-completion-pdf-field "File"
+;;    ivy-bibtex-default-action 'ivy-bibtex-insert-citation
+;;    bibtex-completion-format-citation-functions
+;;     '((org-mode      . bibtex-completion-format-citation-pandoc-citeproc)
+;;       (latex-mode    . bibtex-completion-format-citation-cite)
+;;       (markdown-mode . bibtex-completion-format-citation-pandoc-citeproc)
+;;       (default       . bibtex-completion-format-citation-pandoc-citeproc)
+;;      )
+;;   )
+;; )
 
-;;Configuração Org-Roam-Bibtex - não está a funcionar perfeitamente
+;; ;;Configuração Org-Roam-Bibtex - não está a funcionar perfeitamente
 ;;
+;;
+;;Configurar Org-Cite e Citar
+;;
+(setq org-cite-csl-styles-dir "~/Dropbox/Bibliografia/CSL")
+(setq org-cite-global-bibliography '("~/Dropbox/Bibliografia/BetterBibLatex/bib.bib"))
+(setq! citar-bibliography '("~/Dropbox/Bibliografia/BetterBibLatex/bib.bib"))
+
+
 (use-package! org-roam-bibtex
   :after org-roam
   :config
