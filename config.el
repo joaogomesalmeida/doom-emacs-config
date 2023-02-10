@@ -136,17 +136,6 @@ doom-variable-pitch-font (font-spec :family "Iosevka SS04" :size 16)
         display-line-numbers nil)
   (visual-fill-column-mode 1))
 
-(add-hook! 'markdown-mode-hook #'jga/md-mode-visual)
-;;
-
-(custom-set-faces!
-  '(markdown-header-face-1 :foreground "#9f7efe" :height 1.25 :weight extra-bold :inherit markdown-header-face)
-  '(markdown-header-face-2 :foreground "#0098dd" :height 1.15 :weight bold       :inherit markdown-header-face)
-  '(markdown-header-face-3 :foreground "#50a14f" :height 1.08 :weight bold       :inherit markdown-header-face)
-  '(markdown-header-face-4 :foreground "#ff6480" :height 1.00 :weight bold       :inherit markdown-header-face)
-  '(markdown-header-face-5 :foreground "#ff6480" :height 0.90 :weight bold       :inherit markdown-header-face)
-  '(markdown-header-face-6 :foreground "#ff6480" :height 0.75 :weight extra-bold :inherit markdown-header-face))
-
 
 ;;
 ;;
@@ -199,7 +188,7 @@ doom-variable-pitch-font (font-spec :family "Iosevka SS04" :size 16)
   (setq orb-preformat-keywords
         '("citekey" "title" "url" "author-or-editor" "keywords" "file")
         orb-process-file-keyword t
-        orb-file-field-extensions '("pdf"))
+        orb-attached-file-field-extensions '("pdf"))
 
   (setq orb-templates
         '(("r" "ref" plain(function org-roam-capture--get-point)
